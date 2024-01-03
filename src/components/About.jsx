@@ -13,37 +13,74 @@ import php from './../assets/images/php.png'
 import linux from './../assets/images/linux.png'
 import tailwind from './../assets/images/tailwind.png'
 import docker from './../assets/images/docker.png'
+import { motion } from 'framer-motion'
 
 function About() {
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.3 } },
+  };
   return (
-    <div id='about' className='px-[5%] lg:px-[10%] my-3 mb-10'>
-          <b className='mb-4'>ABOUT ME</b>
-          <div className='flex flex-col lg:flex-row justify-between gap-12'>
-            <div className='w-full lg:w-[70%]'>
-              <p className='font-sans'><span className='text-3xl font-sans'>Hi!</span> I am Afrin. A software engineer with 2 years of experience. I started out as a <i>Frontend</i> engineer working on UI with pure JavaScript and CSS.
-              During this time, I built and tackled complex <i>front-end structures and functionalities</i>. Alongside, I partly worked on the backend side of things inquisitively observing the many things that needed to be taken care of. 
-              </p>
-              <br/>
-              <p>Soon enough, I relaized that back-end was much more than just <i>CRUD</i>. From database designing to architecture planning, I became increasingly interested in getting the full picture of how complicated IT systems were built.
-              Happened to be enrolled in a year-long Cyber Security diploma at that time, I was blessed with a good understanding of IT infrastructures and practices that faciliated development - DevOps. I felt like I was finally getting a clearer picture 
-              of things.</p>
-              <br/>
-              <p>Fast forward a few months, I deep dived into various architectures, design practices and concepts. My current areas of interests are <i>Microservices, Distributed Systems and Serverless Architectures.</i> I'm also keen on 
-              gradually building <i>cloud native</i> apps and services. Why I strive to explore the corners of web development stems from a strange desire to <i>creatively</i> solve problems. Right now, my only <span className='font-semibold'>toolset</span> at hand to do so is with <i>Tech</i>.</p>
-            </div>
-            <div className='mx-2 flex flex-col items-center align-middle justify-start gap-3'>
-              <h2 className='text-2xl font-semibold'>What I build</h2>
-              <span className=''>Frontend Development</span>
-              <span className=''>Websites/Landing pages</span>
-              <span className=''>Full-stack Application Development</span>
-              <span className=''>Monolithic Applications</span>
-              <span className=''>REST APIs</span>
-              <span className=''>Module Development</span>
-              
-            </div>
-          </div>
-          <div className='my-3 flex flex-col font-sans gap-3 justify-center align-middle items-center p-4'>           
-              <div className='grid grid-rows-2 grid-flow-col gap-2 '>
+    <motion.div
+      id='about'
+      className='flex flex-col gap-3 px-[5%] lg:px-[5%] my-10 mb-10 lg:h-screen'
+      variants={containerVariants}
+      initial='hidden'
+      animate='visible'
+    >
+      <b className='mb-4 text-2xl font-semibold'>ABOUT ME</b>
+      <motion.div
+        className='flex flex-col lg:flex-row justify-between gap-12'
+        variants={containerVariants}
+        initial='hidden'
+        animate='visible'
+      >
+        <motion.div
+          className='w-full lg:w-[70%]'
+          variants={textVariants}
+          initial='hidden'
+          animate='visible'
+        >
+          <p className='font-sans text-lg'>
+  <span className='text-3xl font-sans'>H</span>ello there! I'm Afrin, a software engineer with a journey spanning over 2 years. My career kickstarted as a <span style={{ color: '#52805f' }}><i>Frontend</i></span> engineer, sculpting user interfaces with pure JavaScript and CSS. In this realm, I crafted intricate <span style={{ color: '#52805f' }}><i>front-end structures and functionalities</i></span>. Concurrently, I delved into the backend realm, exploring its complexities and observing the myriad aspects that demanded attention.
+</p>
+<br />
+<p className='text-lg'>
+  Soon, the backend world unfolded beyond mere <span style={{ color: '#52805f' }}><i>CRUD</i></span>. From designing databases to planning architectures, my curiosity deepened. Enrolled in a year-long Cyber Security diploma, I gained insights into IT infrastructures and DevOps practices, providing a holistic view of software development. It felt like the missing puzzle pieces were falling into place.
+</p>
+<br />
+<p className='text-lg'>
+  Fast forward a few months, and I immersed myself in diverse architectures, design principles, and cutting-edge concepts. My present focus revolves around <span style={{ color: '#52805f' }}><i>Microservices, Distributed Systems, and Serverless Architectures.</i></span> I aspire to incrementally construct <span style={{ color: '#52805f' }}><i>cloud-native</i></span> applications and services. My passion for exploring the fringes of web development stems from an unconventional desire to <span style={{ color: '#52805f' }}><i>creatively</i></span> tackle challenges. Currently, my primary <span className='font-semibold'>toolset</span> for this adventure is <span style={{ color: '#52805f' }}><i>Tech</i></span>.
+</p>
+
+        </motion.div>
+        <motion.div
+          className='mx-2 flex flex-col items-center text-center align-middle justify-start gap-3'
+          variants={textVariants}
+          initial='hidden'
+          animate='visible'
+        >
+          <h2 className='text-2xl font-semibold'>What I Build</h2>
+          <span className='text-gray-800'>Immersive Frontend Experiences</span>
+          <span>Dynamically Crafted <br/>Websites and Landing Pages</span>
+          <span className='text-gray-800'>End-to-End Full-stack Applications</span>
+          <span>Robust Monolithic Applications</span>
+          <span className='text-gray-800'>Powerful, Secure RESTful APIs</span>
+          <span>Custom Module Development</span>
+        </motion.div>
+      </motion.div>
+      <motion.div
+        className='my-3 flex flex-col font-sans gap-3 justify-center align-middle items-center p-4'
+        variants={textVariants}
+        initial='hidden'
+        animate='visible'
+      >
+        <div className='grid grid-rows-2 grid-flow-col gap-2 '>
                 <img className='rounded w-20' src={react} />
                 <img className='rounded w-10' src={js} />
                 <img className='rounded w-10' src={css} />
@@ -58,13 +95,10 @@ function About() {
                 <img className='rounded w-20' src={linux} />
                 <img className='rounded w-20' src={tailwind} />
                 <img className='rounded w-20' src={docker} />
-              </div>
-            </div>
-            
-          
-          
-        </div>
-  )
-}
+                </div>
+      </motion.div>
+    </motion.div>
+  );
+};
 
 export default About

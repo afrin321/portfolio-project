@@ -3,6 +3,9 @@ import Me from './../assets/images/me.jpg'
 import About from './About'
 import Project from './Project'
 import Background from './Background'
+import Blog from './Blog'
+import Contact from './Contact'
+import Footer from './Footer'
 
 
 function Home() {
@@ -24,14 +27,18 @@ function Home() {
         </div>
         <div className='relative bottom-[45px] w-full flex justify-around align-baseline items-center px-[5%] lg:px-[20%] '>
           <span className='hover:text-blue-500'>About</span>
-          <span className='hover:text-blue-500'>Projects</span>
+          <span className='hover:text-blue-500'>Projects</span>          
           <span className='hover:text-blue-500'>Background</span>
-          <span className='hover:text-blue-500'>Blog</span>
+          <span className='hover:text-blue-500'>Blog</span>          
           <span className='hover:text-blue-500'>Contact</span>
         </div>
         <About/>
         <Project/>
         <Background/>
+        <Blog/>        
+        <Contact/>
+        <Footer/>
+        
         
     </div>
   )
